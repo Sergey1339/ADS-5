@@ -10,7 +10,6 @@ class TPQueue {
   TPQueue* next;
   TPQueue* prev;
   TPQueue* begin;
-  
  public:
   TPQueue() {
     next = nullptr;
@@ -46,10 +45,10 @@ void push(const T &element) {
   }
 T pop() {
 if (begin != nullptr) {
- T x = begin->core;
- begin = begin->next;
- return x;
- }
+T x = begin->core;
+begin = begin->next;
+return x;
+}
 }
 };
 struct SYM {
