@@ -5,12 +5,13 @@
 
 template<typename T>
 class TPQueue {
-  private:
+ private:
   T core;
   TPQueue* next;
   TPQueue* prev;
   TPQueue* begin;
-  public:
+  
+ public:
   TPQueue() {
     next = nullptr;
     prev = nullptr;
@@ -44,10 +45,10 @@ void push(const T &element) {
     }
   }
 T pop() {
- if (begin != nullptr) {
-   T x = begin->core;
-   begin = begin->next;
-   return x;
+if (begin != nullptr) {
+ T x = begin->core;
+ begin = begin->next;
+ return x;
  }
 }
 };
