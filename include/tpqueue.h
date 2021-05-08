@@ -5,24 +5,24 @@
 
 template<typename T>
 class TPQueue {
- private:
+  private:
   T core;
   TPQueue* next;
   TPQueue* prev;
   TPQueue* begin;
- public:
+  public:
   TPQueue() {
-    next = NULL;
-    prev = NULL;
-    begin = NULL;
+    next = nullptr;
+    prev = nullptr;
+    begin = nullptr;
   }
- void push(const T &element) {
-    if (begin != NULL) {
-      TPQueue* step = new TPQueue; // создание нового элемента
-      step->core = element;        //захват значения 
-      step->prev = prev;           //cвязь с предыдущем элементом
+void push(const T &element) {
+    if (begin != nullptr) {
+      TPQueue* step = new TPQueue;
+      step->core = element;
+      step->prev = prev;
       prev = step;
-      next->next = step;           //cвязь с предыдущем элементом
+      next->next = step;
       next = step;
       if (step->core.prior > step->prev->core.prior) {
         TPQueue* step_prev = step->prev;
@@ -43,17 +43,14 @@ class TPQueue {
       next = step;
     }
   }
- char pop() {
-   if (begin != NULL) {
-     char x = begin->core.ch;
-     begin = begin->next;
-     return x;
-   } else {
-     return '/';
-   }
+T pop() {
+ if (begin != nullptr) {
+   T x = begin->core;
+   begin = begin->next;
+   return x;
  }
+}
 };
-
 struct SYM {
   char ch;
   int  prior;
