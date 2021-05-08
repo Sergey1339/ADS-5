@@ -10,13 +10,11 @@ class TPQueue {
   TPQueue* next;
   TPQueue* prev;
   TPQueue* begin;
-  TPQueue* end;
  public:
   TPQueue() {
     next = NULL;
     prev = NULL;
     begin = NULL;
-    end = NULL;
   }
  void push(const T &element) {
     if (begin != NULL) {
@@ -26,7 +24,6 @@ class TPQueue {
       prev = step;
       next->next = step;           //cвязь с предыдущем элементом
       next = step;
-      end = step;
       if (step->core.prior > step->prev->core.prior) {
         TPQueue* step_prev = step->prev;
         TPQueue* step_this = step;
