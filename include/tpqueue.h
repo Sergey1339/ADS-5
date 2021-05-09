@@ -10,8 +10,8 @@ class TPQueue {
   TPQueue* next;
   TPQueue* prev;
   TPQueue* begin;
- 
-  public:
+
+ public:
   TPQueue() {
     next = nullptr;
     prev = nullptr;
